@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/vue.js" ></script>
+	</head>
+	<body>
+		<div id="aa">
+			<lala message="hello"></lala>
+			<love></love>
+			
+			
+			<input v-model="parentmsg" /></br>
+			<lala v-bind:message="parentmsg" ></lala>
+			
+			
+		</div>
+		
+	</body>
+</html>
+<script>
+   var  Child={
+   	template:"<h1>局步自定义组件</h1>"
+   }
+   Vue.component("lala",{
+   	props:["message"],
+   	template:"<h1>{{message}}</h1>"
+   })
+	new Vue({
+		el:"#aa",
+		components:{
+			"love":Child
+		},
+		data:{
+			parentmsg:"asa"
+		}
+	})
+	
+	
+	
+	
+</script>

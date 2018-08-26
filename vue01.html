@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue-01</title>
+	</head>
+	<body>
+		<div id="vue01">
+			<h1>sit:{{sit}}</h1>
+			<h1>url:{{url}}</h1>
+			<h1>{{sss()}}</h1>	
+			<h1 @click="mm">点击</h1>
+			<p id="saa"></p>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/vue.js" ></script>
+</html>
+<script>
+	var s=new Vue({
+		el:"#vue01",
+		data:{
+			sit:"一切随缘",
+			url:"www.baidu.com"
+		},
+		methods:{
+			sss:function(){
+				return this.sit+"you are you are";
+			},
+			mm:function(){
+				alert("ss");
+				document.getElementById("saa").innerHTML="saaaaaa";
+			}
+			
+		}	
+	})
+	
+</script>

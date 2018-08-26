@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+	<div id="app">
+		<!--插值表达式-->
+		<!--模版-->
+		<span>{{msg}}</span></br>
+		<span>{{msg2}}</span></br>	
+		<!--v-text v-html v-bind v-on v-model-->
+		<span v-text="msg" style="color: red;" v-on:click="_click"></span>
+		<span v-text="msg" style="color: red;" @:click="_click"></span></br>
+		
+		<p v-bind:title="title">测试v-bind</p>
+		<p :title="title">测试v-bind</p>
+		
+		<input v-model="inputvalue"/>
+		<span>{{inputvalue}}</span></br>
+		
+		firstname:<input v-model="firstname"/></br>
+		lastname:<input v-model="lastname"/></br>
+		全名：<span>{{fullname}}</span></br>
+	    修改次数<span>{{count}}</span><br>
+	    <!--直接删除-->
+	    <!--<span v-if="show">显示</span>-->
+	    <span v-show="show">显示</span>
+		<button @click="handlerClick">toggle</button>
+		<ul>
+			
+			<li v-for="(item,index) in list" style="list-style: none;">{{index}}{{item}}</li>
+		</ul>
+		<ul>
+			
+			<li v-for="(item,index) in data" >{{item.pname}}{{item.price}}</li>
+		</ul>
+		<ul>
+			<product-item v-for="(item,index) in data" v-bind:content="item"></product-item>		
+		</ul>
+		
+	</div>
+	</body>
+	<script type="text/javascript" src="js/vue.js" ></script>
+	<script type="text/javascript" src="js/index.js"  ></script>
+</html>

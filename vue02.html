@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/vue.js" ></script>
+	</head>
+	<body>
+		<div id="mo">
+			<input  v-model="mess"placeholder="来写我啊"/>
+			<p>{{mess}}</p>
+			
+			<p>单个复选框：</p>
+			<input type="checkbox" id="checkbox"  v-model="checked" />
+			<label for="checkbox">{{checked}}</label>
+			<p>多个复选框：</p>
+			<input type="checkbox" id="gogle" value="gogle" v-model="checkeds" />
+			<label for="gogle">gogle</label>
+			<input type="checkbox" id="baidu" value="baidu" v-model="checkeds" />
+			<label for="baidu">baidu</label>
+			<span>选择的值为:{{checkeds}}</span>
+			
+			
+			<input type="radio" id="ss" value="ss" v-model="pick" />
+			<label for="ss">ss</label>
+			<input type="radio" id="mm" value="mm" v-model="pick" />
+			<label for="mm">mm</label>
+			<span>选中的值:{{pick}}</span>
+			
+			<select  v-model="selected" name="fruit">
+				<option value="">选择一个网站</option>
+				<option value="www.baidu.com">百度</option>
+				<option value="www.lala.com">啦啦</option>			
+			</select>
+			<div id="output">
+				选择的网站是:{{selected}}
+			</div>
+
+		</div>
+	</body>
+</html>
+<script>
+	new Vue({
+		el:"#mo",
+		data:{
+		mess:"rrr",
+		checked:false,
+		checkeds:[],
+		pick:"ss",
+		selected:""
+		}
+		
+		
+	})
+	
+	
+	
+</script>
